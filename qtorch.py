@@ -70,6 +70,21 @@ except ImportError as e:
         def get_metrics_report(self): return {}
     LASER = LASERV30()
 
+# Import Phase 3 Modules (Deep Quantum Integration)
+try:
+    import anneal
+    print("✅ D-Wave Annealing Shim integrated")
+except ImportError:
+    print("⚠️ Annealing fallback")
+    anneal = None
+
+try:
+    import dissipative
+    print("✅ Dissipative QNN (Entropy 2025) integrated")
+except ImportError:
+    print("⚠️ Dissipative fallback")
+    dissipative = None
+
 # ============================================================================
 # 2. QUANTUM TENSOR CLASS (DEBUGGED & ENHANCED)
 # ============================================================================
@@ -1918,6 +1933,12 @@ class TorchNamespace:
 
 # Create global torch object
 torch = TorchNamespace()
+
+# Phase 3: Deep Quantum Integration Exports
+if anneal:
+    torch.anneal = anneal
+if dissipative:
+    torch.dissipative = dissipative
 
 # ============================================================================
 # 11. MAIN ENTRY POINT
