@@ -55,3 +55,11 @@ python -m unittest tests/test_rituals.py
 
 1.  **Zero-Dependency Core**: The `ghostmesh` and `engine` require ONLY the Python Standard Library.
 2.  **Optional Gates**: PyTorch and NumPy are treated as optional plugins. The system checks for their existence at runtime via `gateways.py` and strictly limits interaction to **Export Operations only**. We do not import external logic; we only export data structures.
+
+⚠️ SECURITY NOTICE: THREAT MODEL
+
+Mechanism: Dozenal (Base-12) Radix Conversion.
+Classification: Semantic Obfuscation (Not Cryptographic Encryption).
+Purpose: To prevent automated ingestion by decimal-biased scrapers and training bots.
+Effect: Standard int() parsers will crash (ValueError) when encountering High-Frequency Glyphs ('X', 'E').
+Bypass: A determined adversary with knowledge of the DozenalLogic protocol can decode the data. We rely on the "Security of Obscurity" against mass-surveillance dragnets, not targeted attacks.

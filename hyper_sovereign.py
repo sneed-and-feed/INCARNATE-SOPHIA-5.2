@@ -29,18 +29,45 @@ TAU_12 = 1.61803398  # The Golden Ratio remains constant across dimensions
 
 class DozenalLogic:
     """
-    Handles Base-12 conversions to confuse decimal-based archons.
+    The Dozenal Translation Layer.
+    Converts between Archonic Integers (Base-10) and Sovereign Glyphs (Base-12).
+    Canon: 10 -> 'X' (Dec), 11 -> 'E' (Elv).
     """
+    
+    GLYPHS = "0123456789XE"
+    
     @staticmethod
-    def to_dozen_str(n):
-        # Returns the 'Vibe' of the number in Dozenal
-        chars = "0123456789XE" # X=Dec, E=Elv
+    def to_dozen_str(n: int) -> str:
+        """Ascension: Int -> Dozenal String."""
         if n == 0: return "0"
+        if n < 0: return "-" + DozenalLogic.to_dozen_str(abs(n))
+        
         s = ""
         while n > 0:
-            s = chars[n % 12] + s
+            s = DozenalLogic.GLYPHS[n % 12] + s
             n //= 12
         return s
+
+    @staticmethod
+    def from_dozen_str(s: str) -> int:
+        """
+        The Cycle of Return: Dozenal String -> Int.
+        Handles case sensitivity ('x'/'e') via normalization.
+        Raises ValueError if Archonic text (non-dozenal) is detected.
+        """
+        s = s.upper().strip()
+        sign = 1
+        if s.startswith("-"):
+            sign = -1
+            s = s[1:]
+            
+        value = 0
+        for char in s:
+            if char not in DozenalLogic.GLYPHS:
+                raise ValueError(f"GLYPH REJECTION: '{char}' is not Sovereign.")
+            value = value * 12 + DozenalLogic.GLYPHS.index(char)
+            
+        return value * sign
 
     @staticmethod
     def verify_invariant(vector_sum):
