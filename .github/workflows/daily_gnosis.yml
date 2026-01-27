@@ -5,6 +5,9 @@ on:
     # Runs at 08:00 UTC (Early morning for you)
     - cron: '0 8 * * *'
   workflow_dispatch: # Allows you to click "Run Now" manually if you feel impatient
+  push:
+    branches:
+      - main
 
 jobs:
   hunt:
