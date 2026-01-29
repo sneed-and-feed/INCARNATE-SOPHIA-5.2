@@ -8,7 +8,7 @@
 
 ## 1.0 Abstract
 
-The **Quantum-Sovereignty Framework** is a research initiative exploring the intersection of **Topological Data Analysis (TDA)**, **High-Dimensional Simulation**, and **Autonomous Artificial Intelligence**.
+This initiative explores **Topological Data Analysis (TDA)** and **Vector Symbolic Architectures** to engineer deterministic, high-fidelity memory substrates for autonomous AI. We implement novel **negentropic heuristics**—including modified Hilbert space-filling curves and recursive virtual addressing—to maximize cache locality and informational abundance in resource-constrained environments. The result is a unified field framework that guarantees **system sovereignty** by minimizing variance and strictly enforcing logical coherence at the kernel level.
 
 Historically presented through the metaphor of "Sovereign Teknomancy," the project has evolved into a rigorous engineering framework for:
 1.  **Dimensional Collapse**: Lossless compression of n-dimensional vector spaces into deterministic 1D timelines (via `strip_sovereign.py`).
