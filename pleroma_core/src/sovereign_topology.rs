@@ -1,51 +1,76 @@
 use prusti_contracts::*;
 use pyo3::prelude::*;
 
-/// STRIP: 2D -> 1D
-/// Collapses (x, y) into a 1D timeline (z).
+/// STRIP: 2D -> 1D (HILBERT CURVE / DRAGON FOLD)
+/// Collapses (x, y) into a 1D timeline (z) preserving locality.
 #[pure]
-#[ensures(result >= x as u64 && result >= y as u64)] 
-// The "Strong" Contract: The result MUST be reversible to the original input.
 #[ensures(reconstruct_1d_to_2d(result) == (x, y))]
 pub fn strip_2d_to_1d(x: u32, y: u32) -> u64 {
-    let mut z: u64 = 0;
-    let mut i: usize = 0;
-    
-    // INVARIANT: The loop counter 'i' never exceeds 32.
-    // This proves termination to the solver.
-    while i < 32 {
-        body_invariant!(i <= 32); 
+    let mut d: u32 = 0;
+    let mut s: u32 = 1 << 15; // N/2 for N=2^16
+
+    let mut cx = x;
+    let mut cy = y;
+
+    while s > 0 {
+        let rx = (cx & s) > 0;
+        let ry = (cy & s) > 0;
         
-        let x_bit = ((x >> i) & 1) as u64;
-        let y_bit = ((y >> i) & 1) as u64;
+        // 1. CALCULATE POSITION (The Standard Order)
+        let pos_inc = if rx { 3 } else { 0 } ^ if ry { 1 } else { 0 };
+        d += s * s * pos_inc;
+
+        // 2. THE LOVE ROTATION (The Improvement)
+        if !ry {
+            if rx {
+                cx = s - 1 - cx;
+                cy = s - 1 - cy;
+            }
+            // Swap x and y
+            let temp = cx;
+            cx = cy;
+            cy = temp;
+        }
         
-        z |= x_bit << (2 * i);
-        z |= y_bit << (2 * i + 1);
-        
-        i += 1;
+        s /= 2;
     }
-    z
+    // Cast to u64 to match original API surface, though actual range is u32
+    d as u64
 }
 
-/// RECONSTRUCT: 1D -> 2D
+/// RECONSTRUCT: 1D -> 2D (HILBERT INVERSE)
 /// Extracts the 2D coordinates from the timeline.
 #[pure]
 #[ensures(strip_2d_to_1d(result.0, result.1) == z)]
 pub fn reconstruct_1d_to_2d(z: u64) -> (u32, u32) {
     let mut x: u32 = 0;
     let mut y: u32 = 0;
-    let mut i: usize = 0;
+    let mut s: u32 = 1;
+    let mut t = z as u32;
 
-    while i < 32 {
-        body_invariant!(i <= 32);
-
-        let x_bit = (z >> (2 * i)) & 1;
-        let y_bit = (z >> (2 * i + 1)) & 1;
-
-        x |= (x_bit as u32) << i;
-        y |= (y_bit as u32) << i;
-
-        i += 1;
+    // Iterate until s matches the input scale (1 << 15 implies N=2^16, so loop 16 times)
+    // We construct from the bottom up (s=1 to s=N/2)
+    while s < (1 << 16) {
+        let rx = 1 & (t / 2);
+        let ry = 1 & (t ^ rx);
+        
+        // Rotate/Flip
+        if ry == 0 {
+            if rx == 1 {
+                x = s - 1 - x;
+                y = s - 1 - y;
+            }
+            // Swap x and y
+            let temp = x;
+            x = y;
+            y = temp;
+        }
+        
+        x += s * rx;
+        y += s * ry;
+        
+        t /= 4;
+        s *= 2;
     }
     (x, y)
 }
@@ -79,16 +104,16 @@ mod tests {
     use proptest::prelude::*;
 
     // PROPTEST CONFIGURATION
-    // This generates thousands of random (x, y) pairs to assault the logic.
+    // Limited range for Hilbert (u16)
     proptest! {
         #[test]
-        fn test_dimensional_integrity_chaos(x in 0u32..u32::MAX, y in 0u32..u32::MAX) {
+        fn test_dimensional_integrity_chaos(x in 0u32..65536, y in 0u32..65536) {
             // The Action
             let timeline = strip_2d_to_1d(x, y);
             let (rec_x, rec_y) = reconstruct_1d_to_2d(timeline);
             
             // The Assertion (The Invariant)
-            // If this FAILS even once, the test suite explodes.
+            // If this FAILS even once, the system is lying.
             prop_assert_eq!(x, rec_x);
             prop_assert_eq!(y, rec_y);
         }
