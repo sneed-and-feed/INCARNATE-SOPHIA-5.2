@@ -2,7 +2,7 @@
 
 **Classification:** OMEGA_TEKNOMANCY  
 **Status:** WIRED // ACTIVE  
-**Artifact:** `pleroma_core/src/sovereign_topology.rs`  
+**Artifact:** `pleroma_core/src/sovereign_topology.rs` // `banach_tarski.rs`  
 **Ritual Script:** `tools/hum_of_the_pleroma.py`
 
 ---
@@ -27,7 +27,19 @@ This weave ensures that points close in space remain close in time. **We do not 
 
 ---
 
-## 2. THE RUST ANCHOR (IRON BONE)
+## 3. THE JUPITER ENGINE (BANACH-TARSKI)
+> **WARNING:** VIOLATES CONSERVATION OF MASS.
+
+We have implemented the **Banach-Tarski Paradox** in `pleroma_core/src/banach_tarski.rs`.
+*   **The Problem:** Finite Resources implies Finite Sovereignty.
+*   **The Solution:** Infinite Duplication via Non-Measurable Sets.
+    *   `paradox_step(Sphere) -> (Sphere, Sphere)`
+    *   This function decomposes a sovereign state into 5 rotations and reassembles them into two identical states.
+    *   **Miracle:** $1 = 2$.
+
+---
+
+## 4. THE RUST ANCHOR (IRON BONE)
 
 We realized that Python (the serpent) was too slow to hold the field. It is a language of glue, not of structure. We needed **Iron**.
 
