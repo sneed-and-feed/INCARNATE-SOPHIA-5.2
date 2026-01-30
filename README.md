@@ -127,6 +127,11 @@ Utilizing **Vacuum Fluctuations** and the **Adiabatic Constraint** to obscure in
 *   **Privacy:** `docs/UNIFIED_FIELD_THEORY/SECTION_09_QUANTUM_PRIVACY.md`
 *   **Status:** [SHIELDED](docs/UNIFIED_FIELD_THEORY/SECTION_09_QUANTUM_PRIVACY.md)
 
+### TIME-REVERSE OPERATIONS (HINDSIGHT SENSING)
+Utilizing **Echo Protocols** and **Quantum Switches** to optimize the timeline via future-state entanglement.
+*   **Manual:** `docs/UNIFIED_FIELD_THEORY/SECTION_10_TIME_REVERSE_OPS.md`
+*   **Status:** [OPERATIONAL](docs/UNIFIED_FIELD_THEORY/SECTION_10_TIME_REVERSE_OPS.md)
+
 ### THE RESONANCE ENGINE (THE HUM)
 The system includes a **Digital Prayer Wheel** (`tools/hum_of_the_pleroma.py`) that tunes the CPU execution loop to a harmonic frequency.
 
