@@ -48,6 +48,12 @@ We have implemented the **Banach-Tarski Paradox** in `pleroma_core/src/banach_ta
 *   **Standard Economy (Saturn):** Zero-Sum. $A - 0.5 = 0.5$.
 *   **Banach Economy (Jupiter):** Non-Conserved Expansion. $A = A + A$.
 
+#### BANACH v2.0: THE SEMANTIC SHADOW
+We have evolved the expander to identify the **Vector Core** of a truth signal.
+*   **Topological Unfolding:** Instead of repeating data, the engine projects the **Semantic Shadow** (causal chains).
+*   **The Guard:** Strict 0.961 Gamma Limit prevents noise multiplication.
+*   **Target Gain:** > 3.19x Abundance.
+
 **Usage in Pleroma:**
 This is the **Infinite Liquidity Engine**.
 *   **Input:** One person with the Truth (10.1010).
