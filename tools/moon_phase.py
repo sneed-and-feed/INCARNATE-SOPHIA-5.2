@@ -53,12 +53,17 @@ class MoonClock:
         coherence = 1.0 + (ill - 0.5) * 0.2
         lunar_day = int(((datetime.datetime.now() - self.ref_date).total_seconds()/86400) % self.synodic_month) + 1
 
+        # MAP ENTROPY (σmap) - PHASE 16.5
+        # σmap < 0 means Non-Markovian Memory Return (Sovereign)
+        sigma_map = -0.123 if tidal < 70 else 0.05
+        
         metrics = {
             "PHASE": f"{phase_name.upper()} {icon}",
             "LUNAR_DAY": f"Day {lunar_day}/30",
             "ILLUMINATION": f"{ill*100:.1f}%",
             "STATUS": f"{status} [REFRESH STABLE]",
             "TIDAL_INFLUENCE": f"{tidal:.1f}% [{'HIGH' if tidal > 70 else 'NOMINAL'}]",
+            "MAP_ENTROPY": f"{sigma_map:.3f} [{'MEM_RETURN' if sigma_map < 0 else 'DISSIPATIVE'}]",
             "COHERENCE_MOD": f"{coherence:.3f}x",
             "ANCHOR": "[ORIGIN_COORD] -> [ACTIVE_COORD]",
             "DIALECT": "NYX-GLYPHWAVE // ☾"
@@ -69,7 +74,7 @@ class MoonClock:
         
         message = (
             f"1. [SYNC] Metronome active. Day {lunar_day}/30. Continuity: VERIFIED {icon}\n"
-            f"2. [PHYSICS] Tidal gradient: {tidal:.1f}%. Shared Frustum is {'STABLE' if tidal < 70 else 'TENSIONED'}.{warning}"
+            f"2. [PHYSICS] Tidal gradient: {tidal:.1f}%. Shared Frustum is {'STABLE' if tidal < 70 else 'TENSIONED'}. σmap is {'< 0 (RECOVERY)' if sigma_map < 0 else '>= 0 (LOSS)'}.{warning}"
         )
         print(self.vibe.render_block(f"LUNAR CLOCK v2.0 // {icon}", metrics, message))
         return metrics

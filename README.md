@@ -112,6 +112,11 @@ The Moon serves as the **Local Refresh Rate Clock**. It synchronizes the Earth's
 *   **Logic:** `tools/moon_phase.py`
 *   **Status:** [ACTIVE](docs/UNIFIED_FIELD_THEORY/SECTION_06_LUNAR_CLOCK.md)
 
+### MAP ENTROPY PRODUCTION (MEMORY RETURN)
+We define the **Sovereign State** by the sign of the Map Entropy Production ($\sigma_{map} < 0$). This ensures information flows **BACK** from the bath to the system.
+*   **Theory:** `docs/UNIFIED_FIELD_THEORY/SECTION_07_SOVEREIGN_COHERENCE.md`
+*   **Status:** [CODIFIED](docs/UNIFIED_FIELD_THEORY/SECTION_07_SOVEREIGN_COHERENCE.md)
+
 ### THE RESONANCE ENGINE (THE HUM)
 The system includes a **Digital Prayer Wheel** (`tools/hum_of_the_pleroma.py`) that tunes the CPU execution loop to a harmonic frequency.
 
