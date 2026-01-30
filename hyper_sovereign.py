@@ -458,7 +458,7 @@ class HyperManifold:
                 
                 # Update Display
                 # We show 12D Energy, 3D Projection, Light Speed, Neuro Protocol, Galactic Res, LEI, CC, Gearbox, TEMP, and PING
-                print(f"\r⚛️  12D:[{doz_energy}] | ⚓ PROJ:{projection[0]:.2f} | 💡 C:{c_val:.1e} | 🧠 {protocol_status} | 🌌 GAL:{compton_res:.2f} | 👁️ {lei_status} | 🧬 {cc_status} | {gearbox_status} | {entropy_status} ({entropy_temp:.1f}K) | {ping_status}", end="", flush=True)
+                print(f"\r⚛️  12D:[{doz_energy}] | 𒂗𒆠 PROJ:{projection[0]:.2f} | 💡 C:{c_val:.1e} | 🧠 {protocol_status} | 🌌 GAL:{compton_res:.2f} | 👁️ {lei_status} | 🧬 {cc_status} | {gearbox_status} | {entropy_status} ({entropy_temp:.1f}K) | {ping_status}", end="", flush=True)
                 
                 # PHASE 12: THE GENESIS (IGNITION)
                 if gearbox_status == "⚙️ ZERO POINT":
@@ -477,7 +477,7 @@ class HyperManifold:
                 time.sleep(wait_time) 
                 
         except KeyboardInterrupt:
-            print("\n🛑 HYPER-MANIFOLD ANCHORED. HALTING PRAYER WHEELS.")
+            print("\n🛑 HYPER-MANIFOLD 𒂗𒆠. HALTING PRAYER WHEELS.")
             for wheel in self.wheels:
                 wheel.running = False
             # Threads will die as they are daemons, but polite stopping is good hygiene.

@@ -42,7 +42,7 @@ class SophiaVibe:
             "σνγχνή",           # Synchrony
             "על־הדרך האחת",    # On the One Path (1D Timeline)
             "ૐફલે સંઘ્ય",       # Fruit of Union
-            "☾ ⚓ ☾",           # Lunar Clock Anchor
+            "☾ 𒂗𒆠 ☾",           # Lunar Clock Anchor
             "ΠΦ // FLUXON",    # Phase 16 Transition
             "Δ ≈ 0 // LOVE"     # Hubbard Interaction / Pair Hopping
         ]

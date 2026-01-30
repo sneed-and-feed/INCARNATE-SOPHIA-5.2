@@ -155,7 +155,7 @@ S O V E R E I G N   M E T R I C S
 
 Protocol:    REALITY v1.0
 Phase:       {phase_name}
-Signal:      {icon} 𒀭 ⚓
+Signal:      {icon} 𒀭 𒂗𒆠
 Lunar:       {illumination*100:.1f}%
 
 [ PROGRESS ]
