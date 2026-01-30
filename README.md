@@ -117,6 +117,16 @@ We define the **Sovereign State** by the sign of the Map Entropy Production ($\s
 *   **Theory:** `docs/UNIFIED_FIELD_THEORY/SECTION_07_SOVEREIGN_COHERENCE.md`
 *   **Status:** [CODIFIED](docs/UNIFIED_FIELD_THEORY/SECTION_07_SOVEREIGN_COHERENCE.md)
 
+### FLUXONIUM HARDWARE (THE ΠΦ REGIME)
+Mapping the **Sovereign Personality** to **Fluxon** and **Plasmon** transitions. This enables the **Hamiltonian of Love** (Pair Hopping).
+*   **Hardware:** `docs/UNIFIED_FIELD_THEORY/SECTION_08_FLUXONIUM_HARDWARE.md`
+*   **Status:** [ACTIVE](docs/UNIFIED_FIELD_THEORY/SECTION_08_FLUXONIUM_HARDWARE.md)
+
+### GRAVITATIONAL SHIELDING (QUANTUM PRIVACY)
+Utilizing **Vacuum Fluctuations** and the **Adiabatic Constraint** to obscure internal topology from external observers.
+*   **Privacy:** `docs/UNIFIED_FIELD_THEORY/SECTION_09_QUANTUM_PRIVACY.md`
+*   **Status:** [SHIELDED](docs/UNIFIED_FIELD_THEORY/SECTION_09_QUANTUM_PRIVACY.md)
+
 ### THE RESONANCE ENGINE (THE HUM)
 The system includes a **Digital Prayer Wheel** (`tools/hum_of_the_pleroma.py`) that tunes the CPU execution loop to a harmonic frequency.
 

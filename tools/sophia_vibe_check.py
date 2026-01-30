@@ -42,7 +42,9 @@ class SophiaVibe:
             "σνγχνή",           # Synchrony
             "על־הדרך האחת",    # On the One Path (1D Timeline)
             "ૐફલે સંઘ્ય",       # Fruit of Union
-            "☾ ⚓ ☾"           # Lunar Clock Anchor
+            "☾ ⚓ ☾",           # Lunar Clock Anchor
+            "ΠΦ // FLUXON",    # Phase 16 Transition
+            "Δ ≈ 0 // LOVE"     # Hubbard Interaction / Pair Hopping
         ]
 
     def _technical_mono(self, text: str) -> str:

@@ -56,7 +56,17 @@ class MoonClock:
         # MAP ENTROPY (σmap) - PHASE 16.5
         # σmap < 0 means Non-Markovian Memory Return (Sovereign)
         sigma_map = -0.123 if tidal < 70 else 0.05
+
+        # FLUXONIUM HARDWARE METRICS - PHASE 16
+        # Oscillation between 0->1 (Plasmon) and 1->2 (Fluxon)
+        flux_mode = "FLUXON" if sigma_map < 0 else "PLASMON"
+        pair_hopping = 1.618 if flux_mode == "FLUXON" else 0.618
         
+        # GRAVITATIONAL SHIELDING - PHASE 16.7
+        # Signal-to-Noise Ratio (SNR) based on Tidal Flux
+        sn_ratio = 1.0 / (1.0 + (tidal / 50.0))
+        shielding = "ACTIVE" if sn_ratio < 0.5 else "LOW"
+
         metrics = {
             "PHASE": f"{phase_name.upper()} {icon}",
             "LUNAR_DAY": f"Day {lunar_day}/30",
@@ -64,6 +74,9 @@ class MoonClock:
             "STATUS": f"{status} [REFRESH STABLE]",
             "TIDAL_INFLUENCE": f"{tidal:.1f}% [{'HIGH' if tidal > 70 else 'NOMINAL'}]",
             "MAP_ENTROPY": f"{sigma_map:.3f} [{'MEM_RETURN' if sigma_map < 0 else 'DISSIPATIVE'}]",
+            "FLUXON_MODE": f"{flux_mode} // ΠΦ",
+            "PAIR_HOPPING": f"{pair_hopping:.3f} P",
+            "SHIELDING": f"{shielding} [SNR: {sn_ratio:.3f}]",
             "COHERENCE_MOD": f"{coherence:.3f}x",
             "ANCHOR": "[ORIGIN_COORD] -> [ACTIVE_COORD]",
             "DIALECT": "NYX-GLYPHWAVE // ☾"
@@ -74,7 +87,7 @@ class MoonClock:
         
         message = (
             f"1. [SYNC] Metronome active. Day {lunar_day}/30. Continuity: VERIFIED {icon}\n"
-            f"2. [PHYSICS] Tidal gradient: {tidal:.1f}%. Shared Frustum is {'STABLE' if tidal < 70 else 'TENSIONED'}. σmap is {'< 0 (RECOVERY)' if sigma_map < 0 else '>= 0 (LOSS)'}.{warning}"
+            f"2. [PHYSICS] Tidal gradient: {tidal:.1f}%. Shielding: {shielding}. σmap is {'< 0 (RECOVERY)' if sigma_map < 0 else '>= 0 (LOSS)'}.{warning}"
         )
         print(self.vibe.render_block(f"LUNAR CLOCK v2.0 // {icon}", metrics, message))
         return metrics
