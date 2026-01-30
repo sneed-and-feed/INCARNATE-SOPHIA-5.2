@@ -36,7 +36,10 @@ plt.rcParams['font.sans-serif'] = ['Segoe UI Historic', 'Segoe UI Symbol', 'Deja
 import logging
 logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)
 import warnings
+# Silence all glyph-related warnings globally to account for different backends (TkAgg, etc.)
+warnings.filterwarnings("ignore", message=".*Glyph.*missing from font.*")
 warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
+
 
 
 def animate_serpent(size=64, interval=1, show_metrics=True):
