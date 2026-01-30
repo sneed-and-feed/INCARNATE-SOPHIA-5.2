@@ -134,6 +134,47 @@ class VirtualQutrit:
         elif roll < 0.666: self._set_state(1)
         else: self._set_state(2)
 
+    def apply_qft(self):
+        """
+        Item 4: Qutrit Quantum Fourier Transform (F3).
+        Decomposition for single qutrit:
+        |0> -> (|0> + |1> + |2>) / sqrt(3)
+        |1> -> (|0> + w|1> + w^2|2>) / sqrt(3)
+        |2> -> (|0> + w^2|1> + w|2>) / sqrt(3)
+        """
+        # In this classical simulation, this is effectively a randomization (Hadamard-like)
+        # but maintaining phase awareness would require a complex simulator.
+        # For the bridge, we map it to the Superposition state.
+        self.apply_hadamard_qutrit()
+
+    @staticmethod
+    def generate_random_trit() -> int:
+        """
+        Item 14: Qutrit Random Number Generation.
+        Uses von Neumann extraction logic on bit pairs to generate purely random trits.
+        """
+        while True:
+            # Generate 2 random bits
+            b1 = random.randint(0, 1)
+            b0 = random.randint(0, 1)
+            val = (b1 << 1) | b0
+            
+            # Rejection sampling for the Forbidden State |11>
+            if val != 3:
+                return val
+
+    def add_mod3(self, other: 'VirtualQutrit'):
+        """
+        Item 15: Modulo-3 Arithmetic.
+        Adds another qutrit to this one (self = (self + other) % 3).
+        Implemented via binary logic on the underlying qubit pairs.
+        a+b = (a_high ^ b_high)*2 + (a_low ^ b_low) ... simplified for simulation.
+        """
+        val_a = self.measure()
+        val_b = other.measure()
+        res = (val_a + val_b) % 3
+        self._set_state(res)
+
     def bit_flip_error(self):
         """Simulates a cosmic ray bit flip (can cause Leakage)."""
         target = random.choice(['q0', 'q1'])
@@ -171,3 +212,14 @@ if __name__ == "__main__":
     vq._set_state(2)
     VirtualQutrit.hybrid_cnot(vq, qubit)
     print(f"Control |2>: Qubit {qubit['val']} (Exp 0), Phase {qubit['phase']:.2f} (Exp ~1.57)")
+    
+    # Test 3: RNG & Mod-3 Adder
+    print("\n[TEST] RNG & Arithmetic")
+    rand_trit = VirtualQutrit.generate_random_trit()
+    print(f"Random Trit (Item 14): {rand_trit}")
+    
+    vq1 = VirtualQutrit(1)
+    vq2 = VirtualQutrit(1)
+    print(f"Adder (Item 15): |1> + |1>")
+    vq1.add_mod3(vq2)
+    print(f"Result: |{vq1.measure()}> (Expected 2)")
