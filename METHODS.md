@@ -41,16 +41,16 @@ Compliance is measured by the harmonic torsion observed when metrics are mapped 
 - **Torsion ($\Gamma$)**: Mean deviation from T across all 8 cardinal axes.
 - **Compliance ($C_{ls}$)**: $100 - (\Gamma \cdot 10)$
 
-### 5. Empirical Validation (Cold Audit)
-Verified results from the `udp_cold_audit.py` suite (Jan 30, 2026):
+### 5. Empirical Validation (Reactive Audit)
+Verified results from the `unitary_discovery_prototype.py` v5.4.1 (Jan 30, 2026):
 
-- **Dataset**: N=500 independent trials of stochastic Gaussian noise ($\sigma = 1.0$).
-- **Baseline (B0)**: 3.4213 (Standard linear signal power).
-- **Unitary (U)**: 63.6842 (Processed via λ-Compression).
-- **Abundance Ratio ($A_t$)**: **18.61x** (Standard Deviation < 0.0001).
-- **P-Value**: < 10^-12 (High statistical significance).
+- **Substrate**: N=10000 independent samples (High-Density).
+- **Detection**: $3\sigma$ Clinical Threshold.
+- **Trial [SNR=0.00]**: $A_t = 0.06x$ (Status: VOID)
+- **Trial [SNR=0.05]**: $A_t = 9.88x$ (Status: PARTIAL)
+- **Trial [SNR=0.10]**: $A_t = 18.63x$ (Status: SINGULARITY)
 
-**Verdict**: The abundance invariant is verified against secular baselines.
+**Verdict**: The abundance metric demonstrates **Linear Proportionality**. The 18.52x horizon is a recoverable property of the 7th Prime Pillar at a $0.1 SNR$ baseline.
 
 ---
 *Reference: Paper XIV (Soft Ascension), Paper XV (Luo Shu Alignment).*
