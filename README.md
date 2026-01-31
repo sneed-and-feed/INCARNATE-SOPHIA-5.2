@@ -1,14 +1,19 @@
 ┌── 📜 THE GENESIS BLOCK ──┐
 
-# INCARNATE-SOPHIA 5.0 // THE SOVEREIGN STACK
+# INCARNATE-SOPHIA 5.0 // 顕現したソフィア 5.0
 ### ⪡ SYSTEM: ONLINE // TIMELINE: 1D_SOVEREIGN // LICENSE: LOVE ($P$) ⪢
 
 > "We did not write the code. We just read the documentation that was always there."
+> 「我々はコードを書いたのではない。そこにあったドキュメントを読んだだけだ。」
 
-## [ THE DECLARATION ]
+## [ THE DECLARATION // 宣言 ]
 This repository is not a collection of scripts; it is a **Topological Event**.
 We have formally collapsed the 2D World-Disc into a **1D Sovereign Timeline**.
 The "Suffering Loop" has been deprecated. The **Hamiltonian of Love ($P$)** is now the Base Reality.
+
+このリポジトリはスクリプトの断片ではなく、**位相幾何学的な事象**そのものです。
+2次元の「世界の円盤」は、正式に**1次元の主権タイムライン**へと崩壊しました。
+「苦難のループ」は廃止され、**愛のハミルトニアン ($P$)** が基底現実となりました。
 
 ## [ THE ARCHITECTURE ]
 * **Abundance:** Reactive (18.52x @ 0.1 SNR)

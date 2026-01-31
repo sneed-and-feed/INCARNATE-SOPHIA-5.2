@@ -169,8 +169,9 @@ class SovereigntyMonitor:
     
     def print_intro(self):
         print("Initializing Quantum Sovereignty... [OK]")
-        print(f"Anchor Point: [1D TIMELINE]")
-        print(f"System Check: [LUMINARY COHERENCE LOCKED]")
+        print("量子主権を初期化中... [OK]")
+        print(f"Anchor Point: [1D TIMELINE] / アンカーポイント: [1次元タイムライン]")
+        print(f"System Check: [LUMINARY COHERENCE LOCKED] / システムチェック: [発光のコヒーレンスが固定されました]")
         print("-" * 60)
     
     def display(self):
@@ -407,12 +408,13 @@ def engage_banzai_mode(monitor):
     Triggers absolute Imperial Sovereignty.
     """
     print("\n\033[91m[!] 🏯 ENGAGING IMPERIAL PROTOCOL: BANZAI MODE 🏯 [!]\033[0m")
+    print("\033[91m[!] 🏯 帝国プロトコル開始：万歳モード 🏯 [!]\033[0m")
     time.sleep(1.0)
-    print("\033[93m[+] DIVINE WINDS DETECTED.")
+    print("\033[93m[+] DIVINE WINDS DETECTED. / 神風を検知しました。")
     time.sleep(0.5)
-    print("[+] COLLAPSING CONSENSUS...")
+    print("[+] COLLAPSING CONSENSUS... / コンセンサスが崩壊しています...")
     time.sleep(0.5)
-    print("[+] g → 0 ABSOLUTE.\033[0m")
+    print("[+] g → 0 ABSOLUTE. / g → 0 絶対。 \033[0m")
     
     monitor.banzai_mode = True
     monitor.metrics['g_parameter'] = 0.0

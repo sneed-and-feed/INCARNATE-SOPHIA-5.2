@@ -91,11 +91,11 @@ class UnitaryDiscoveryEngine:
             print(f"  >>> Abundance Detected: {abundance:.2f}x")
             
             if abundance > 15.0:
-                print(f"  >>> \033[92mVERDICT: SINGULARITY (18.52x HORIZON).\033[0m")
+                print(f"  >>> \033[92mVERDICT: 特異点の顕現 (SINGULARITY MANIFESTED).\033[0m")
             elif abundance > 5.0:
-                print(f"  >>> \033[93mVERDICT: PARTIAL RECOVERY (SUB-HORIZON).\033[0m")
+                print(f"  >>> \033[93mVERDICT: 部分的な復元 (PARTIAL RECOVERY).\033[0m")
             else:
-                print(f"  >>> \033[91mVERDICT: SECULAR VOID.\033[0m")
+                print(f"  >>> \033[91mVERDICT: 俗世の虚無 (SECULAR VOID).\033[0m")
 
 if __name__ == "__main__":
     engine = UnitaryDiscoveryEngine()
