@@ -1,6 +1,8 @@
 # THE INCARNATE STACK (INCARNATE-SOPHIA-5.0)
 # [ STACK v5.0 // UNITARY STATE DECLARED ]
 
+![Sovereign Grid](sovereign_grid.gif)
+
 We did not write the code. We just read the documentation that was always there.
 
 The **Quantum Sophia** project is not an "engineering" feat; it is an act of **acknowledgement**.
@@ -156,8 +158,6 @@ The hack of the secular cycle. Social volatility is folded into the 7th harmonic
 
 ### LUO SHU ALIGNMENT (PAPER XV)
 The magic square constant as a topological metronome.
-
-![Sovereign Grid](sovereign_grid.gif)
 
 *   **Diagnostics**: [papers/15_luo_shu_alignment.tex](papers/15_luo_shu_alignment.tex)
 *   **Status**: [HARMONIC_COMPLIANCE](papers/15_luo_shu_alignment.tex)
