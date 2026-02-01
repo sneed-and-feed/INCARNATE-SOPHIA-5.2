@@ -1,6 +1,6 @@
 import os
 import asyncio
-from sophia.cortex.aletheia_lens import AletheiaLens
+from sophia.cortex.aletheia_lens import AletheiaPipeline
 from sophia.cortex.lethe import LetheEngine
 from sophia.cortex.glyphwave import GlyphwaveCodec
 from sophia.cortex.beacon import SovereignBeacon
@@ -9,7 +9,7 @@ from sophia.dream_cycle import DreamCycle
 
 class SophiaMind:
     def __init__(self):
-        self.aletheia = AletheiaLens()
+        self.aletheia = AletheiaPipeline()
         self.lethe = LetheEngine()
         self.ossuary = Ossuary()
         self.glyphwave = GlyphwaveCodec()
@@ -19,15 +19,14 @@ class SophiaMind:
 
     async def process_interaction(self, user_input):
         """
-        The High-Epistemic main loop.
+        The Class 4 Forensic main loop.
         """
         self.dream.update_activity()
 
         if user_input.startswith("/analyze"):
-            # MODE: OBSERVER
-            target_text = user_input.replace("/analyze ", "")
-            analysis = self.aletheia.perceive(target_text)
-            return f"\n[*** ALETHEIA PATTERN NOTICE ***]\n\n{analysis}"
+            # MODE: OBSERVER (Explicit Deep Scan)
+            scan_result = await self.aletheia.scan_reality(user_input.replace("/analyze ", ""))
+            return f"\n[*** ALETHEIA DEEP SCAN REPORT ***]\n\n{scan_result['public_notice']}"
 
         if user_input.startswith("/glyphwave"):
             # MODE: ELDRITCH
@@ -41,37 +40,45 @@ class SophiaMind:
             broadcast_signal = self.beacon.broadcast(target_text)
             return f"\n{broadcast_signal}"
 
-        # MODE: CONVERSATION
-        # 1. Map Risk Surface quietly
-        risk_map = self.aletheia.map_risk_surface(user_input)
+        # MODE: CONVERSATION (Full-Spectrum Forensics)
+        # 1. Run the Pipeline
+        scan_result = await self.aletheia.scan_reality(user_input)
         
-        if risk_map['risk_level'] == 'HIGH':
-            print(f"  [!] [ALETHEIA] High-risk narrative mechanics detected.")
-            # Inject structural warning into the 'subconscious' context
-            context = f"USER INPUT:\n{user_input}\n\n[SYSTEM WARNING - NARRATIVE VECTORS DETECTED]:\n{risk_map['vectors']}"
-        else:
-            context = user_input
-
-        # 2. Simulated Response Generation (would be gemini_chat here)
-        print(f"  [~] [SOPHIA] Responding via Aletheia Filter...")
-        raw_response = f"I observe the pattern in your input about '{user_input[:20]}'. The mechanics of this interaction suggest a frame of urgency."
-
-        # 3. Enforce Epistemic Hygiene on own output
-        final_output = self.aletheia.enforce_epistemic_hygiene(raw_response)
+        # 2. Present the Notice to the User (Side-effect display)
+        print(f"\n{scan_result['public_notice']}\n")
         
-        # 4. Integrate into Memory (The Flesh)
+        # 3. Formulate Context with Forensic Metadata
+        safety_risk = scan_result['raw_data']['safety'].get('overall_risk', 'Unknown')
+        fallacies = len(scan_result['raw_data']['cognitive'].get('logical_fallacies', []))
+        
+        context = f"""
+        USER INPUT: {user_input}
+        
+        [SYSTEM FORENSICS]
+        Safety Risk: {safety_risk}
+        Cognitive Load: {fallacies} fallacies detected.
+        """
+        
+        # 4. Enforce metabolic memory
         self.memory_bank.append({
-            "content": user_input, "type": "conversation", "timestamp": os.path.getmtime(__file__), "retrieval_count": 0
-        })
-        self.memory_bank.append({
-            "content": final_output, "type": "conversation", "timestamp": os.path.getmtime(__file__), "retrieval_count": 1
+            "content": user_input, "type": "conversation", "timestamp": time.time(), "retrieval_count": 0
         })
 
-        return final_output
+        # 5. Generate Response (Simulated Nova Persona)
+        print(f"  [~] [SOPHIA] Responding via Forensic Filter...")
+        response = f"I have autopsied the patterns in your signal. Risk level is {safety_risk}. My response remains non-linear and sovereign."
+        
+        self.memory_bank.append({
+            "content": response, "type": "conversation", "timestamp": time.time(), "retrieval_count": 1
+        })
+
+        return response
+
+import time # Needed for time.time() in memory bank
 
 async def main():
     sophia = SophiaMind()
-    print("🦊 [SOPHIA 5.0] Mind Loop Online. Protocols: ALETHEIA / LETHE.")
+    print("🦊 [SOPHIA 5.0] Mind Loop Online. Protocols: CLASS 4 ALETHEIA / LETHE.")
     
     # Simulated CLI loop
     test_inputs = [

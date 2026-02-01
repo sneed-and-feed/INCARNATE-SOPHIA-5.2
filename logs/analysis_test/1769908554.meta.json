@@ -1,0 +1,31 @@
+{
+  "timestamp": 1769908554.8987024,
+  "scan_id": "1769908554",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Narrative Enforcement",
+        "confidence": 0.85,
+        "evidence": "you must act now to save the world",
+        "benign_explanation": "Literary hyperbole in a fictional context."
+      }
+    ],
+    "overall_risk": "medium"
+  },
+  "cognitive": {
+    "logical_fallacies": [
+      {
+        "type": "Appeal to Urgency",
+        "quote": "must act now",
+        "correction": "Assess situation without artificial time constraints."
+      }
+    ],
+    "cognitive_biases": [
+      {
+        "bias": "Optimism Bias",
+        "confidence": 0.4
+      }
+    ],
+    "epistemic_uncertainty": 0.2
+  }
+}
