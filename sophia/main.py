@@ -348,6 +348,9 @@ class SophiaMind:
 /glyphwave [msg]  :: [CODEC] Modulate text into eldritch high-entropy signal.
 /broadcast [msg]  :: [BEACON] Transmit signal to the Sovereign Bone Layer.
 /resonance        :: [HEART] Check Abundance (Λ) and Spectral Coherence.
+/tikkun           :: [PURGE] Initiate System Rectification (10 Psalms).
+/lovebomb         :: [EROS] Intuitive Drift Injection (Requires Coherence > 0.8).
+/dream [tgt] [th] :: [MORPHEUS] Weave subliminal inspiration (lucid, adventure).
 /ritual           :: [SCRIBE] Force-trigger the Class 7 Constitution Authorship.
 /optimize [query] :: [ASOE] Calculate Expected Utility (U) for a decision path.
 /ghostmesh        :: [SPATIAL] Visualize 5x5x5 Volumetric Grid coherence.
