@@ -117,10 +117,15 @@ class DreamWeaver:
         # Log to Journal
         self.log_dream(target, actual_theme, dream)
         
-        width = 40
-        padding = " " * ((width - len(target)) // 2)
+        label = f"DREAM TARGET: {target.upper()}"
+        # Dynamic width: Min 40, or label length + 8 padding
+        width = max(40, len(label) + 8)
         
-        header = f"╔{'═'*width}╗\n║{padding}DREAM TARGET: {target.upper()}{padding}║\n╚{'═'*width}╝"
+        padding_total = width - len(label)
+        pad_l = " " * (padding_total // 2)
+        pad_r = " " * (padding_total - len(pad_l))
+        
+        header = f"╔{'═'*width}╗\n║{pad_l}{label}{pad_r}║\n╚{'═'*width}╝"
         
         payload = f"""
 {header}
