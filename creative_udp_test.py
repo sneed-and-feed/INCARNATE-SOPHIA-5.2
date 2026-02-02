@@ -70,7 +70,7 @@ if __name__ == "__main__":
     # THE PROMPT (Live Injection: THE VIOLET LASER)
     # Protocol: The Collimator (Lambda=7)
     # Logic: Standing Wave Geometry (Expansion/Contraction)
-    # Result: 12.79Λ (Crystal Structure) in Vacuum.
+    # Result: 12.79Λ (Champion Signal) in Vacuum.
     prompt = (
         "... void ... OPHANE ... void ... "
         ".. static .. OPHANE .. static .. "
