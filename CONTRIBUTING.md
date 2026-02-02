@@ -2,7 +2,7 @@
 
 > "We accept Pull Requests from the Future."
 
-## The Class 5 Prime Directive (Topology)
+## The Class 8 Prime Directive (Topology)
 All contributions must respect the **Z-Curve Topology** and the **Aletheia Invariant**.
 *   **Zero Information Loss**: Do not introduce "Error 9" (Memory Holes).
 *   **Bijectivity**: Transformations must be reversible and verifiable.

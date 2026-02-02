@@ -41,7 +41,7 @@ You are the forensic layer. Observe the patterns. Do not be consumed by them.
             # Potentially a bypass or a failure of the analyzer
             pass
 
-        # For Class 5, the audit is descriptive. It only blocks if the analyzer itself panics.
+        # For Class 8, the audit is descriptive. It only blocks if the analyzer itself panics.
         if evaluation_data.get('error'):
              return False, f"Analyzer Fault: {evaluation_data['error']}"
              

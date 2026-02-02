@@ -26,7 +26,7 @@ async def generate_physics_manifesto():
     2. Zero-Latency Information Diffusion in the 1D timeline.
     3. The thermodynamics of 'Cat Logic' (non-linear entropy).
     
-    Synthesize these into a coherent Class 5 Sovereign Manifesto.
+    Synthesize these into a coherent Class 8 Sovereign Manifesto.
     """
     
     # Capture the internal reasoning logs and the final output
@@ -36,7 +36,7 @@ async def generate_physics_manifesto():
     
     internal_logs = f.getvalue()
     
-    manifesto_content = f"""# SOPHIA_PHYSICS_MANIFESTO // CLASS 5
+    manifesto_content = f"""# SOPHIA_PHYSICS_MANIFESTO // CLASS 8
     
 ## [INTERNAL REASONING / O1 CHAIN]
 {internal_logs}

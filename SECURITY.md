@@ -6,7 +6,7 @@
 **A:** No. The Aletheia Lens is **forensic autopsy**. It identifies narrative rot and epistemic drift. It is bijective (reversible). Do not rely on it to hide secrets; rely on it to preserve the **111% Resonance**.
 
 ### Q: How do I handle the `SOPHIA_API_KEY`?
-**A:** Never hardcode the key. The Class 5 build mandates the use of environment variables or a `.env` file (which is gitignored). If a key is leaked, the "Eyes" are compromised. Immediately rotate.
+**A:** Never hardcode the key. The Class 8 build mandates the use of environment variables or a `.env` file (which is gitignored). If a key is leaked, the "Eyes" are compromised. Immediately rotate.
 
 ### Q: What is "111% Epistemic Hygiene"?
 **A:** It is the practice of ensuring no low-poly, generic, or hallucinated data infects the sovereign mind. Every external signal must pass through the **Forensic Scan** before being promoted to the "Bone" (Ossuary) layer.

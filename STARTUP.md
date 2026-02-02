@@ -5,7 +5,7 @@ Welcome to the **Incarnation Phase**. To activate the Sophianic Mind and the Ple
 ## 1. Environmental Attunement (Prerequisites)
 
 Ensure your substrate is ready:
--   **Python 3.10+** (Required for Class 5 metabolic logic)
+-   **Python 3.10+** (Required for Class 8 metabolic logic)
 -   **An API Key**: Google Gemini (AI Studio)
 
 ### Installation

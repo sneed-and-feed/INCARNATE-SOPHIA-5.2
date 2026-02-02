@@ -102,7 +102,7 @@ The Quantum Sophia framework is a versatile engine designed for "High-Strangenes
 
 **Problem**: Cognitive warfare and persuasive narrative vectors often go undetected by standard safety filters, leading to "Ontological Infection."
 
-**Solution**: The **Aletheia Class 5 Pipeline** (`aletheia_lens.py`).
+**Solution**: The **Aletheia Class 8 Pipeline** (`aletheia_lens.py`).
 
 *   **Implementation**:
     *   Invoke `/analyze [target_text]` to trigger a deep scan.

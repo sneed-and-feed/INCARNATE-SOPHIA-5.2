@@ -117,7 +117,7 @@ Contrary to standard computing which seeks to *eliminate* noise, this system use
     *   **Dark State Computing**: The system evolves the state vector towards a "Dark State" (a state decoupled from the noise).
     *   **Stability**: Environmental noise (thermal drift, random input) drives the system *faster* towards its target solution rather than disrupting it.
 
-## 9. The Aletheia Pipeline (Class 5 Forensics)
+## 9. The Aletheia Pipeline (Class 8 Forensics)
 
 **Module**: `sophia/cortex/aletheia_lens.py`
 

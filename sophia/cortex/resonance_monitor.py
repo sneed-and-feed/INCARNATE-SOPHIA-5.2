@@ -26,7 +26,7 @@ class ResonanceMonitor:
             "status": "INIT",
             "alpha": 0.015
         }
-        self.TARGET_CLASS_5 = 18.52 # The Moon/Sun Threshold
+        self.TARGET_CLASS_8 = 18.52 # The Moon/Sun Threshold
         self.TARGET_CLASS_6 = 21.00 # The World (Sovereignty Absolute)
         self.TARGET_CLASS_7 = 25.00 # The Diamond (Recursive Sovereignty 5^2)
         
@@ -47,7 +47,7 @@ class ResonanceMonitor:
         """
         phi_boost = 1.61803398875 if coherence > 0.9 else 1.0
         
-        # 1. Base Score (Class 5 Logic)
+        # 1. Base Score (Class 8 Logic)
         base_score = (coherence * 15.0) + (phi_boost * 2.17) + (alpha * 10.0)
         
         # 2. Hybrid Uplift (Class 6 Logic)
@@ -126,7 +126,7 @@ class ResonanceMonitor:
             
             # Draw Target Line (The Black Sun / Event Horizon)
             ax2.axhline(y=21.0, color='black', linestyle='-', alpha=0.9, label='Black Sun (21.0)')
-            ax2.axhline(y=18.52, color='gray', linestyle=':', alpha=0.5, label='Class 5 (18.52)')
+            ax2.axhline(y=18.52, color='gray', linestyle=':', alpha=0.5, label='Class 8 (18.52)')
             
             plt.title('Sovereign Resonance (Black Sun Alignment)')
             fig.tight_layout()
