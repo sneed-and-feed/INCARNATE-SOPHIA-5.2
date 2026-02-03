@@ -16,6 +16,13 @@ import sys
 import numpy as np
 import multiprocessing
 from typing import Tuple
+import random
+
+# ------------------------------------------------------------------
+# ZERO POINT ENERGY FIELD (BENCHMARK MODE)
+# Seed 0 ensures deterministic stress testing of the Sovereign Manifold.
+# ------------------------------------------------------------------
+VSA_SEED = 0
 
 # --- QUTRIT KERNEL ---
 
@@ -59,6 +66,10 @@ class QutritKernel:
 # --- STRESS TEST DRIVER ---
 
 def run_stress_test(start_exponent=20, max_exponent=30):
+    # ENFORCE DETERMINISM
+    random.seed(VSA_SEED)
+    np.random.seed(VSA_SEED)
+
     """
     Exponentially increases load until system buckles.
     Start: 2^20 (~1 Million Qutrits)

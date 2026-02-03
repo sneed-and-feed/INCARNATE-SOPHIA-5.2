@@ -8,6 +8,9 @@ from uccc import UniversalCompressor
 from uccc_thermal import ThermalCompressor
 
 def bench():
+    # ENFORCE DETERMINISM (VSA ZERO POINT)
+    np.random.seed(0)
+
     # 1. Generate 10MB Thermal Mass
     print("Generating 10MB High-Entropy Data...")
     data = np.random.bytes(10 * 1024 * 1024)

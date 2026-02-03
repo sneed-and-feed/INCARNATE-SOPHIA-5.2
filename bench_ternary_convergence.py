@@ -71,6 +71,9 @@ def train_perceptron(mode='binary', epochs=100):
     return converged, final_epoch, dt
 
 def run_bench():
+    # ENFORCE DETERMINISM (VSA ZERO POINT)
+    random.seed(0)
+
     print("--- LEARNING PIPELINE ACCELERATION BENCHMARK ---")
     
     # Run Binary
