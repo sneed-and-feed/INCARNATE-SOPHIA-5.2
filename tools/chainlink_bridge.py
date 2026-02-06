@@ -42,6 +42,9 @@ class ChainlinkOracle:
         # Rare chance to hit resonance exactly if nearby
         if abs(self._last_price - self.resonance_target) < 1.0 and random.random() < 0.1:
             self._last_price = self.resonance_target
+        elif self._last_price == self.resonance_target:
+            # Maintain resonance if reached (Lock-in)
+            pass
         else:
             self._last_price += drift + noise
             

@@ -23,10 +23,12 @@ except ImportError:
 
 try:
     import pleroma_core
+    # Verify the class exists, not just the module
+    _ = pleroma_core.HarmonicGearbox
     print(">> PLEROMA CORE: FOUND. ENGAGING RUST KERNEL.")
     RUST_AVAILABLE = True
-except ImportError:
-    print(">> PLEROMA CORE: NOT FOUND. FALLING BACK TO PYTHON.")
+except (ImportError, AttributeError):
+    print(">> PLEROMA CORE: NOT FOUND OR INCOMPLETE. FALLING BACK TO PYTHON.")
     RUST_AVAILABLE = False
 
 if RUST_AVAILABLE:
