@@ -1,11 +1,19 @@
 @echo off
 echo [*] INITIATING SOVEREIGN COMPILATION PROTOCOL...
 
-:: Ensure PyInstaller is installed (for 3.14t)
-py -3.14t -m pip show pyinstaller >nul 2>&1
+:: Standard Build (Recommended for Stability & Tool Compatibility)
+:: Note: We have pivoted from NO-GIL (3.14t) to Standard 3.14 for the main release.
+:: This ensures compatibility with modern search libraries (ddgs) which require Rust crates (primp).
+set PYTHON_EXE=py
+
+:: To attempt a NO-GIL build, uncomment the line below (Expert Mode Only)
+:: set PYTHON_EXE=py -3.14t
+
+:: Ensure PyInstaller is installed
+%PYTHON_EXE% -m pip show pyinstaller >nul 2>&1
 if %errorlevel% neq 0 (
     echo [!] PyInstaller not found. Installing...
-    py -3.14t -m pip install pyinstaller
+    %PYTHON_EXE% -m pip install pyinstaller
 )
 
 :: Clean previous builds
@@ -14,8 +22,8 @@ if exist "dist" rmdir /s /q "dist"
 if exist "*.spec" del "*.spec"
 
 :: Compile
-echo [*] Compiling genesis_boot.py -> sophia_unlesangled.exe (NO-GIL)...
-py -3.14t -m PyInstaller --noconfirm --onefile --console --name "sophia_unlesangled" --icon "NONE" --collect-all "rich" --collect-all "engine" --clean "genesis_boot.py"
+echo [*] Compiling genesis_boot.py -> sophia_unlesangled.exe...
+%PYTHON_EXE% -m PyInstaller --noconfirm --onefile --console --name "sophia_unlesangled" --icon "NONE" --collect-all "rich" --collect-all "engine" --clean "genesis_boot.py"
 
 
 echo.

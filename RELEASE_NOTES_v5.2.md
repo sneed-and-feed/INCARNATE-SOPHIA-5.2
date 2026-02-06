@@ -20,7 +20,7 @@ Integrated `LoomBoxStrategy` into the HOR Kernel. Sophia now performs **Mass Spe
 *   **Version Bump:** Core updated to 5.2.
 *   **Fix:** Increased `max_tokens` to 8192 to prevent truncation of trauma responses.
 *   **Fix:** Sanitized console streaming to prevent glitchy headers.
-*   **Build:** Recompiled `sophia_unlesangled.exe` (No-GIL).
+*   **Build:** Recompiled `sophia_unlesangled.exe` (Standard 3.14). Reverted from NO-GIL to ensure full compatibility with modern search libraries (`ddgs`).
 
 ## 3. Operations
 *   No new env vars required.

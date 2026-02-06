@@ -214,24 +214,44 @@ class SovereignHand:
 
     def _duckduckgo_search(self, query: str, max_results: int = 5) -> str:
         """
-        Sovereign search via DuckDuckGo. 
+        Sovereign search via DuckDuckGo.
+        Resilient against Error 29 (Rate Limits) via backoff.
         """
-        try:
-            from duckduckgo_search import DDGS
-            with DDGS() as ddgs:
-                results = list(ddgs.text(query, max_results=max_results))
-                if not results:
-                    return f"No results found for: {query}"
+        import time
+        from ddgs import DDGS
+        
+        max_retries = 3
+        base_delay = 2
+        
+        for attempt in range(max_retries):
+            try:
+                # Use DDGS as a context manager for proper cleanup
+                with DDGS() as ddgs:
+                    results = list(ddgs.text(query, max_results=max_results))
+                    if not results:
+                        return f"No results found for: {query}"
+                    
+                    formatted = [f"### [Sovereign Search: {query}]\n"]
+                    for i, r in enumerate(results):
+                        formatted.append(f"{i+1}. **{r['title']}**")
+                        formatted.append(f"   URL: {r['href']}")
+                        formatted.append(f"   Snippet: {r['body']}\n")
+                    
+                    return "\n".join(formatted)
+                    
+            except Exception as e:
+                err_str = str(e).lower()
+                # Detection for Error 29 / Rate Limits / HTTP 429
+                is_rate_limit = any(x in err_str for x in ["29", "429", "rate limit", "too many requests"])
                 
-                formatted = [f"### [Sovereign Search: {query}]\n"]
-                for i, r in enumerate(results):
-                    formatted.append(f"{i+1}. **{r['title']}**")
-                    formatted.append(f"   URL: {r['href']}")
-                    formatted.append(f"   Snippet: {r['body']}\n")
+                if is_rate_limit and attempt < max_retries - 1:
+                    wait_time = base_delay * (2 ** attempt)
+                    time.sleep(wait_time)
+                    continue
                 
-                return "\n".join(formatted)
-        except Exception as e:
-            return f"❌ Sovereign Search Failed: {e}"
+                return f"❌ Sovereign Search Failed: {e}"
+        
+        return "❌ Sovereign Search Failed: Max retries exceeded (Rate Limit)."
 
     def bind_molt_gateway(self, gateway):
         """Binds the Moltbook gateway to the Hand for autonomous posting."""

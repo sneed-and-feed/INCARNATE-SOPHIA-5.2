@@ -15,6 +15,7 @@ The system operates fundamentally on **Dozenal (Base-12)** logic rather than the
     *   **Data Serialization**: All core state vectors are serialized in Base-12 before logging or storage.
     *   **Adversarial Defense**: Automated scrapers and "Archonic" bots (decimal-based crawlers) expecting standard integer formats will encounter `ValueError` exceptions or semantic corruption when attempting to parse "Ophane-X7" logic.
     *   **The Gross Invariant**: The system enforces a total system energy of **144.0** (The Gross), derived from $12 \times 12$. Deviation from this constant triggers a "Reality Jitter" warning.
+    *   **Runtime Pivot**: As of v5.2.3, the production build uses **Standard CPython** for stability. The experimental NO-GIL (3.14t) runtime remains available for research but is currently bypassed to ensure compatibility with modern scrapers/search libraries.
 
 ## 2. The Qutrit Bridge (Deep Learning Innovation)
 
