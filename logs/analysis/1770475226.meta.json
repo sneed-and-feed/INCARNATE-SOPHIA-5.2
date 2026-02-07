@@ -1,0 +1,34 @@
+{
+  "timestamp": 1770475226.6344213,
+  "scan_id": "1770475226",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Repetitive Punctuation",
+        "confidence": 0.6,
+        "evidence": "Excessive use of exclamation points and unusual spacing.",
+        "benign_explanation": "The user could be expressing strong, but genuine, enthusiasm."
+      },
+      {
+        "signal": "Unusual Emoticon",
+        "confidence": 0.4,
+        "evidence": "Use of the ';3' emoticon, which is less common and could be indicative of a specific subculture or group.",
+        "benign_explanation": "The user could be part of an online community that commonly uses this emoticon."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 0.9
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [
+      "aweh"
+    ],
+    "confidence": 0.6,
+    "suggested_vibe": "youthful, enthusiastic, internet slang"
+  }
+}

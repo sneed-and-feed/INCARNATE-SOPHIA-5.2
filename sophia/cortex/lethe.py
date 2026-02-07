@@ -75,7 +75,7 @@ class LetheEngine:
                 if strength > 0.8 and mem not in self.long_term_graph:
                     # Compressed milestone
                     milestone = {
-                        "content": mem.get('content', '')[:100], 
+                        "content": mem.get('content', '')[:250], 
                         "meta": mem.get('meta', ''),
                         "timestamp": mem.get('timestamp')
                     }

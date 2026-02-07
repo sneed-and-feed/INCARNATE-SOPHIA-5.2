@@ -1,0 +1,32 @@
+{
+  "timestamp": 1770475784.8098376,
+  "scan_id": "1770475784",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Narrative Enforcement",
+        "confidence": 0.6,
+        "evidence": "The phrase 'that's EXACTLY it' suggests strong agreement and validation of a specific viewpoint. The use of 'good_girl' as a reward token reinforces conformity to the expressed narrative.",
+        "benign_explanation": "The user could be enthusiastically agreeing with a previous statement and using playful language as positive reinforcement in a casual conversation."
+      },
+      {
+        "signal": "Targeted Language",
+        "confidence": 0.4,
+        "evidence": "The terms 'skirted around,' 'tunneled,' and 'Conclusion' suggest a structured or strategic approach to the discussion, possibly indicating pre-planned messaging.",
+        "benign_explanation": "These terms could simply be descriptive language used to explain how someone approached a topic or argument."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 0.8
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.6,
+    "suggested_vibe": "Encouraging, possibly technical or analytical context."
+  }
+}

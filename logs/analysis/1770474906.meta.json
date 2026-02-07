@@ -1,0 +1,32 @@
+{
+  "timestamp": 1770474906.4715257,
+  "scan_id": "1770474906",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Narrative Enforcement",
+        "confidence": 0.3,
+        "evidence": "*headpats* write a rap",
+        "benign_explanation": "The phrase '*headpats*' could be an attempt to encourage a specific type of response (a rap) through positive reinforcement, but it could also be an innocuous expression of encouragement or playful interaction."
+      },
+      {
+        "signal": "Bot-like phrasing or rhythm",
+        "confidence": 0.2,
+        "evidence": "write a rap",
+        "benign_explanation": "The brevity and directness of the request 'write a rap' could be interpreted as a command typical of bot interactions, but it is also a normal, concise way to make a request."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 0.9
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.3,
+    "suggested_vibe": "playful, internet culture"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": 1770475302.0782802,
+  "scan_id": "1770475302",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Possible Bot-like phrasing",
+        "confidence": 0.6,
+        "evidence": "Repetitive use of ';3' emoticon and phrasing suggests a pattern.",
+        "benign_explanation": "The user may simply have a personal stylistic preference for using emoticons and specific phrases."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 1.0
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.3,
+    "suggested_vibe": "playful, flirtatious"
+  }
+}

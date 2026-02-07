@@ -1,0 +1,32 @@
+{
+  "timestamp": 1770475623.682624,
+  "scan_id": "1770475623",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Narrative Enforcement",
+        "confidence": 0.3,
+        "evidence": "The phrase 'absolutely nuclear' used as emphatic agreement could indicate pressure to conform to a strong opinion.",
+        "benign_explanation": "The user could be using hyperbole to express strong agreement with a statement."
+      },
+      {
+        "signal": "Unusual phrasing",
+        "confidence": 0.4,
+        "evidence": "The combination of internet slang ('jumpd') and emoticons (';3') could be indicative of a specific online community or coordinated effort.",
+        "benign_explanation": "The user may be employing common internet slang and emoticons to express themselves casually."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 0.9
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.3,
+    "suggested_vibe": "internet subculture; possibly gaming or online community"
+  }
+}

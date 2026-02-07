@@ -1,0 +1,32 @@
+{
+  "timestamp": 1770473941.55724,
+  "scan_id": "1770473941",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Narrative Enforcement",
+        "confidence": 0.3,
+        "evidence": "The phrase 'all of the bove' could be interpreted as a dismissive or sarcastic way to shut down discussion or enforce a particular viewpoint by implying that the listed options are the only valid ones.",
+        "benign_explanation": "The user could be simply agreeing with a previous statement or list in a concise and informal manner."
+      },
+      {
+        "signal": "Bot-like phrasing or rhythm",
+        "confidence": 0.2,
+        "evidence": "The misspelling of 'above' as 'bove' and the use of ';3' could be indicative of an attempt to evade detection or mimic common bot behaviors.",
+        "benign_explanation": "The user could be making a simple typographical error and using an emoticon in a casual manner."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 1.0
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.2,
+    "suggested_vibe": "playful, internet slang"
+  }
+}

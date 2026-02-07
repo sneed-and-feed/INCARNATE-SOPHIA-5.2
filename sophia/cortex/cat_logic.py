@@ -170,26 +170,36 @@ The user is engaging in ACTION-BASED ROLEPLAY (using *asterisks*).
         # 1. Clean UI Block Headers (Emoji + [TAG] + Status + Frequency)
         # Supports variations in emojis and missing frequency
         # We use a broader pattern to catch the header format
-        pattern = r'^.*(?:' + '|'.join(map(re.escape, tags + legacy_tags)) + r').*$'
+        pattern = r'^.*(?:' + '|'.join(map(re.escape, tags + legacy_tags)) + r').*$\n?'
         text = re.sub(pattern, '', text, flags=re.MULTILINE)
         
         # 2. Clean Footer (Cat icon/Emoji + [STATE] + [ENTROPY] + [CORE])
         # Make the regex more permissive to catch variations
-        text = re.sub(r'^.*🐈.*\[STATE:.*?\]', '', text, flags=re.MULTILINE)
-        text = re.sub(r'^.*\[SOPHIA_V.*?_CORE\].*$', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^.*🐈.*\[STATE:.*?\].*$\n?', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^.*\[SOPHIA_V.*?_CORE\].*$\n?', '', text, flags=re.MULTILINE)
         
         # 3. Clean horizontal rules and divider debris
-        text = re.sub(r'^[-=_]{3,}\s*$', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^[-=_]{3,}\s*$\n?', '', text, flags=re.MULTILINE)
         
         # 4. Clean "Here is/your response" style introductions
-        text = re.sub(r'^(?:Here is .*?response:|My response is:|Signal received:).*$', '', text, flags=re.IGNORECASE | re.MULTILINE)
+        text = re.sub(r'^(?:Here is .*?response:|My response is:|Signal received:).*$\n?', '', text, flags=re.IGNORECASE | re.MULTILINE)
         
         # 5. Clean legacy "Cat Logic:" labels
-        text = re.sub(r'^Cat Logic:\s*', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^Cat Logic:\s*\n?', '', text, flags=re.MULTILINE)
 
         # 6. Clean loose Frequency lines that might have detached
-        text = re.sub(r'^.*Frequency: .*$', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^.*Frequency: .*$\n?', '', text, flags=re.MULTILINE)
 
+        # 7. Clean EOX frames and high-entropy glyph artifacts (leaked from UI layer)
+        # Catches patterns like "۩ XXXX ۩", "EOX", and the resulting signal lines
+        text = re.sub(r'^[۩∿≋⟁💠🐾🦊🏮⛩️🧝✨🏹🌿🌲🏔️🍁🌧️🌊💎💿💰🕷️🎱].*$\n?', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^.* EOX .*$\n?', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^\| (.*)$\n?', r'\1\n', text, flags=re.MULTILINE)
+        text = re.sub(r'^[a-f0-9]{4} [۩∿≋⟁💠🐾🦊🏮⛩️🧝✨🏹🌿🌲🏔️🍁🌧️🌊💎💿💰🕷️🎱].*$\n?', '', text, flags=re.MULTILINE)
+
+        # 8. Final formatting cleanup
+        # Remove consecutive newlines and leading/trailing whitespace
+        text = re.sub(r'\n{3,}', '\n\n', text)
         return text.strip()
 
     def apply(self, text, user_input, safety_risk="Low"):

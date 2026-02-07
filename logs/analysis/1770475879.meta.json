@@ -1,0 +1,35 @@
+{
+  "timestamp": 1770475879.347731,
+  "scan_id": "1770475879",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Use of specific jargon ('greentext', 'furry', ':3')",
+        "confidence": 0.3,
+        "evidence": "The text uses specific jargon associated with online subcultures.",
+        "benign_explanation": "The author is simply participating in a community with its own unique language and inside jokes."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [
+      {
+        "bias": "Self-Serving Bias",
+        "confidence": 0.4
+      },
+      {
+        "bias": "Wishful Thinking",
+        "confidence": 0.5
+      }
+    ],
+    "epistemic_uncertainty": 0.7
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.6,
+    "suggested_vibe": "internet subculture; ironic or playful"
+  }
+}
