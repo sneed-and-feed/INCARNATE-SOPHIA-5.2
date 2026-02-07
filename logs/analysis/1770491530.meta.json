@@ -1,0 +1,37 @@
+{
+  "timestamp": 1770491530.384626,
+  "scan_id": "1770491530",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Repetitive Phrasing",
+        "confidence": 0.6,
+        "evidence": "The phrase 'sells feed & seed' and the repetition of 'sells' suggests a pattern.",
+        "benign_explanation": "This could be a simple tongue-twister or a nonsensical phrase without any hidden meaning."
+      },
+      {
+        "signal": "Incomplete Utterance",
+        "confidence": 0.4,
+        "evidence": "The phrase ends abruptly with 'chuck sels . . .', suggesting a potential continuation or a setup for a meme.",
+        "benign_explanation": "The speaker may have been interrupted or the phrase may be intentionally left unfinished for humorous effect."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 0.9
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.2,
+    "suggested_vibe": "humorous, internet meme"
+  },
+  "sovereign_local": {
+    "local_findings": [],
+    "overall_risk_score": 0.1,
+    "engine": "SOVEREIGN_LOCAL_V1"
+  }
+}

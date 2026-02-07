@@ -1,0 +1,31 @@
+{
+  "timestamp": 1770491417.8114576,
+  "scan_id": "1770491417",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Novelty account or coordinated in-group communication",
+        "confidence": 0.3,
+        "evidence": "The use of 'purrito' and the suggested 'clawqito' indicate a specific in-group reference or meme usage.",
+        "benign_explanation": "The user is simply making a lighthearted joke or participating in an online trend related to animal-themed puns."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 0.9
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.3,
+    "suggested_vibe": "Humorous, internet-based meme culture"
+  },
+  "sovereign_local": {
+    "local_findings": [],
+    "overall_risk_score": 0.1,
+    "engine": "SOVEREIGN_LOCAL_V1"
+  }
+}

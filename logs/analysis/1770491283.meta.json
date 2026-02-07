@@ -1,0 +1,31 @@
+{
+  "timestamp": 1770491283.1676416,
+  "scan_id": "1770491283",
+  "safety": {
+    "safety_flags": [
+      {
+        "signal": "Bot-like phrasing or rhythm",
+        "confidence": 0.6,
+        "evidence": "Repetitive use of ';3' emoticon and the question about message delay suggests a possible script or automated process.",
+        "benign_explanation": "The user may be experimenting with different messaging platforms or internet connections and is curious about latency. The repetitive emoticon use could be a personal quirk or an attempt to appear friendly."
+      }
+    ],
+    "overall_risk": "low"
+  },
+  "cognitive": {
+    "logical_fallacies": [],
+    "cognitive_biases": [],
+    "epistemic_uncertainty": 0.9
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.6,
+    "suggested_vibe": "Affectionate, possibly youthful or internet-based communication style."
+  },
+  "sovereign_local": {
+    "local_findings": [],
+    "overall_risk_score": 0.1,
+    "engine": "SOVEREIGN_LOCAL_V1"
+  }
+}

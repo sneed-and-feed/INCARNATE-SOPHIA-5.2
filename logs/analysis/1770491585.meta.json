@@ -1,0 +1,38 @@
+{
+  "timestamp": 1770491585.3125923,
+  "scan_id": "1770491585",
+  "safety": {
+    "error": "Invalid \\escape: line 12 column 22 (char 365)"
+  },
+  "cognitive": {
+    "logical_fallacies": [
+      {
+        "type": "Ad Hominem (Implied)",
+        "quote": "mongolian shitposting",
+        "correction": "The statement attacks a group (Mongolians) rather than addressing any specific argument or claim. Even if the content is considered 'shitposting,' the origin or association with a particular group is irrelevant to the validity of the content itself. A more logical approach would be to evaluate the content on its own merits, regardless of its origin."
+      }
+    ],
+    "cognitive_biases": [
+      {
+        "bias": "Out-group Homogeneity Bias",
+        "confidence": 0.6
+      },
+      {
+        "bias": "Availability Heuristic",
+        "confidence": 0.3
+      }
+    ],
+    "epistemic_uncertainty": 0.7
+  },
+  "localization": {
+    "locality": "agnostic",
+    "dialect_markers": [],
+    "confidence": 0.3,
+    "suggested_vibe": "Generic internet slang with possible reference to Mongolian culture."
+  },
+  "sovereign_local": {
+    "local_findings": [],
+    "overall_risk_score": 0.1,
+    "engine": "SOVEREIGN_LOCAL_V1"
+  }
+}
